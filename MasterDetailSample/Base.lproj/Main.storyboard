@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MasterDetailSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RkC-rj-K09"/>
+                        <viewControllerLayoutGuide type="bottom" id="PvQ-id-imP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter city" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TjH-dq-7ta">
+                                <rect key="frame" x="71" y="26" width="456" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="onTextEntered:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="ddb-cI-sdA"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kS7-NC-9ik">
+                                <rect key="frame" x="20" y="30" width="31" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="31" id="EfP-3k-nIJ"/>
+                                    <constraint firstAttribute="height" constant="21" id="un6-fr-hhj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Found data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plc-pj-26c">
+                                <rect key="frame" x="20" y="82" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="q5Q-gs-8yc">
+                                <rect key="frame" x="20" y="118" width="560" height="462"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Byn-H0-fyn">
+                                <rect key="frame" x="546" y="26" width="34" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="EhK-8C-HWb"/>
+                                    <constraint firstAttribute="width" constant="34" id="Q7w-bk-haP"/>
+                                </constraints>
+                                <state key="normal" title="Load"/>
+                                <connections>
+                                    <action selector="onButtonClicked:" destination="BYZ-38-t0r" eventType="touchDown" id="plI-hJ-8po"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="zP3-qm-rZ3">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="EtC-hD-asN"/>
+                                    <constraint firstAttribute="height" constant="50" id="soN-ly-rbF"/>
+                                </constraints>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Byn-H0-fyn" firstAttribute="trailing" secondItem="q5Q-gs-8yc" secondAttribute="trailing" id="14d-ds-csr"/>
+                            <constraint firstItem="Plc-pj-26c" firstAttribute="leading" secondItem="kS7-NC-9ik" secondAttribute="leading" id="1hy-hg-pfY"/>
+                            <constraint firstItem="q5Q-gs-8yc" firstAttribute="top" secondItem="Plc-pj-26c" secondAttribute="bottom" constant="20" id="3X9-dB-dzu"/>
+                            <constraint firstItem="Plc-pj-26c" firstAttribute="top" secondItem="kS7-NC-9ik" secondAttribute="bottom" constant="30" id="3aM-Aq-CDm"/>
+                            <constraint firstItem="kS7-NC-9ik" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="A0l-Qf-DrT"/>
+                            <constraint firstItem="Byn-H0-fyn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Bm6-j1-THb"/>
+                            <constraint firstItem="Byn-H0-fyn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="20" id="D3k-Vx-Beo"/>
+                            <constraint firstItem="q5Q-gs-8yc" firstAttribute="leading" secondItem="Plc-pj-26c" secondAttribute="leading" id="DT6-cW-n1i"/>
+                            <constraint firstItem="Plc-pj-26c" firstAttribute="top" secondItem="TjH-dq-7ta" secondAttribute="bottom" constant="20" id="M9k-GZ-tEg"/>
+                            <constraint firstItem="kS7-NC-9ik" firstAttribute="top" secondItem="RkC-rj-K09" secondAttribute="bottom" constant="20" id="QGv-3Z-fqk"/>
+                            <constraint firstItem="Byn-H0-fyn" firstAttribute="leading" secondItem="TjH-dq-7ta" secondAttribute="trailing" constant="20" id="RDH-A9-FhE"/>
+                            <constraint firstItem="TjH-dq-7ta" firstAttribute="leading" secondItem="kS7-NC-9ik" secondAttribute="trailing" constant="20" id="ViE-Ll-8RZ"/>
+                            <constraint firstItem="PvQ-id-imP" firstAttribute="top" secondItem="Plc-pj-26c" secondAttribute="bottom" constant="30" id="dXs-43-e5H"/>
+                            <constraint firstItem="Byn-H0-fyn" firstAttribute="centerY" secondItem="kS7-NC-9ik" secondAttribute="centerY" id="deQ-j7-9YL"/>
+                            <constraint firstItem="kS7-NC-9ik" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="hrd-h7-hCL"/>
+                            <constraint firstItem="Byn-H0-fyn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="20" id="jPg-UX-cnR"/>
+                            <constraint firstItem="PvQ-id-imP" firstAttribute="top" secondItem="q5Q-gs-8yc" secondAttribute="bottom" constant="20" id="kaf-HV-m8U"/>
+                            <constraint firstItem="TjH-dq-7ta" firstAttribute="centerY" secondItem="kS7-NC-9ik" secondAttribute="centerY" id="r62-Cd-pzN"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="dXs-43-e5H"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="zP3-qm-rZ3" id="SR4-0n-DPv"/>
+                        <outlet property="cityTextField" destination="TjH-dq-7ta" id="0Ls-N9-Oun"/>
+                        <outlet property="loadButton" destination="Byn-H0-fyn" id="Fbf-pX-LUr"/>
+                        <outlet property="tableView" destination="q5Q-gs-8yc" id="GcJ-Wa-vZG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="339" y="398"/>
+        </scene>
+    </scenes>
+</document>
